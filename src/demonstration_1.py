@@ -52,4 +52,20 @@ def top_k_frequent(words, k):
     List[str]
     """
     # Your code here
+    # make a frequency table
+    freq = {}
 
+    for word in words:
+      if word not in freq:
+        freq[word] = 1
+      else:
+        freq[word] += 1
+
+    result = sorted(freq, key=lambda f: (-freq[f], f))
+    return result[:k]
+
+# Tests
+lst = ["lambda", "school", "rules", "lambda", "school", "rocks"]
+k_val = 2
+
+print(top_k_frequent(lst, k_val))

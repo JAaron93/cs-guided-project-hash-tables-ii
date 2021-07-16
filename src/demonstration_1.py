@@ -42,6 +42,8 @@ Notes:
 - words in the input list only contain lowercase letters.
 ```
 """
+
+
 def top_k_frequent(words, k):
     """
     Input:
@@ -56,13 +58,14 @@ def top_k_frequent(words, k):
     freq = {}
 
     for word in words:
-      if word not in freq:
-        freq[word] = 1
-      else:
-        freq[word] += 1
+        if word not in freq:
+            freq[word] = 1
+        else:
+            freq[word] += 1
 
     result = sorted(freq, key=lambda f: (-freq[f], f))
     return result[:k]
+
 
 # Tests
 lst = ["lambda", "school", "rules", "lambda", "school", "rocks"]
